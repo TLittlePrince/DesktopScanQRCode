@@ -12,10 +12,7 @@ import jumpWindow
 
 
 def scan_qr_code(image):
-    try:
-        data = pyzbar.decode(image)
-    except ValueError:
-        return ''
+    data = pyzbar.decode(image)
     return data[0].data.decode('utf-8')
 
 
@@ -60,7 +57,6 @@ class Widget(QWidget):
     def on_close_button_clicked(self):
         self.resize(565, 118)
         self.setHidden(True)
-
         # self.close()
         # sys.exit(app.exec_())
 
