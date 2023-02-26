@@ -12,8 +12,11 @@ import jumpWindow
 
 
 def scan_qr_code(image):
-    data = pyzbar.decode(image)
-    return data[0].data.decode('utf-8')
+    try:
+        data = pyzbar.decode(image)
+        return data[0].data.decode('utf-8')
+    except (IndexError, ValueError):
+        return ''
 
 
 def get_clipboard_image():
