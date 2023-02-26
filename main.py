@@ -60,6 +60,7 @@ class Widget(QWidget):
     def on_close_button_clicked(self):
         self.resize(565, 118)
         self.setHidden(True)
+
         # self.close()
         # sys.exit(app.exec_())
 
